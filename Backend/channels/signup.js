@@ -1,0 +1,75 @@
+var crypto = require('crypto');
+var rand = require('csprng');
+var mongoose = require('mongoose');
+var user = require('config/models');
+var Regex = require("regex");
+var nodemailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
+
+exports.signup = function(email,password,name,callback) {
+
+	var x = email;
+	user.find({email:x},function(err,users){
+			var len = users.length;
+			// console.log(len);
+			if(len == 0){
+			if (x.indexOf("@iitk.ac.in")!= -1) {
+			 // console.log(email);
+			 	if(password.length > 4){
+
+				// console.log(newuser);
+			 	var nodemailer = require('nodemailer');
+                // console.log(nodemailer);
+            // create reusable transporter object using SMTP transport
+            var transporter = nodemailer.createTransport("SMTP",{
+                service: 'Gmail',
+                debug: true,
+                auth: {
+                    user: "shashankkishu@gmail.com",
+                            pass: "HRITIK_ARYAN"
+                }
+            });
+
+            // NB! No need to recreate the transporter object. You can use
+            // the same transporter object for all e-mails
+
+            // setup e-mail data with unicode symbols
+            var mailOptions = {
+                from: 'Shashank Bhushan ✔ <shashankkishu@gmail.com>', // sender address
+                to: x, // list of receivers
+                subject: 'OTP ', // Subject line
+                text: '4567', // plaintext body
+                // html: '<b>Hello world ✔</b>' // html body
+            };
+
+            // send mail with defined transport object
+            transporter.sendMail(mailOptions, function(error, info){
+                if(error){
+                    return ;
+                    // console.log(error);
+                }
+                // console.log('Message sent: ' + info.response);
+
+            });
+			    callback({'res':true,'response':"Sucessfully Registered"});
+			 			}
+
+		else{
+		 
+		    callback({'res':false,'response':"Weak Password"});
+		 
+		}
+			
+		}else{
+			 
+			    callback({'res':false,'response':"Enter a valid IITK Email"});
+			 
+			}
+		}else{
+			 
+			    callback({'res':false,'response':"Email already Registered"});
+			 
+			}
+	});
+		
+}		

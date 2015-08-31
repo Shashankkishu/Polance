@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#5E25A8"
+    >
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Overview"
+        android:id="@+id/home"
+        android:src="@drawable/ic_home_black_36dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#00000000"
+        />
+    <com.example.shashank.polance.CustomTextview
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Overview"
+        android:layout_below="@+id/home"
+        android:layout_alignStart="@+id/home"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="300dp"
+        android:id="@+id/polygon"
+        android:src="@drawable/poly"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"/>
+
+    <com.example.shashank.polance.CustomTextview
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/interest"
+        android:text="Cooking"
+        android:textSize="32sp"
+        android:textColor="#eda8ac"
+        android:layout_centerInParent="true"
+        />
+
+    <ImageView
+        android:layout_width="500dp"
+        android:layout_height="1dp"
+        android:background="#000000"
+        android:id="@+id/line"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_below="@+id/interest"
+        android:layout_alignStart="@+id/interest"/>
+
+    <com.example.shashank.polance.CustomTextview
+    android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:id="@+id/collaboration_count"
+        android:text="33"
+        android:textSize="24sp"
+        android:background="@drawable/background"
+        android:layout_above="@+id/souvenir_count"
+        android:layout_toLeftOf="@+id/collaboration_text"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="20dp"
+        ></com.example.shashank.polance.CustomTextview>
+    <com.example.shashank.polance.CustomTextview
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notifications"
+        android:textColor="#eda8ac"
+        android:textSize="24sp"
+        android:id="@+id/collaboration_text"
+        android:layout_above="@+id/souvenir_text"
+        android:layout_marginBottom="40dp"
+        android:layout_alignLeft="@+id/souvenir_text"/>
+
+    <com.example.shashank.polance.CustomTextview
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:id="@+id/souvenir_count"
+        android:text="33"
+        android:textSize="24sp"
+        android:background="@drawable/background"
+        android:layout_above="@+id/notifications_count"
+        android:layout_toLeftOf="@+id/souvenir_text"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="20dp"
+        ></com.example.shashank.polance.CustomTextview>
+    <com.example.shashank.polance.CustomTextview
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Souvenir"
+        android:textSize="24sp"
+        android:id="@+id/souvenir_text"
+        android:layout_above="@+id/notifications_text"
+        android:layout_marginBottom="40dp"
+        android:layout_alignLeft="@+id/notifications_text"
+        />
+    <com.example.shashank.polance.CustomTextview
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:id="@+id/notifications_count"
+        android:text="32sp"
+        android:textSize="24sp"
+        android:background="@drawable/background"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/notifications_text"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="20dp"
+
+        ></com.example.shashank.polance.CustomTextview>
+    <com.example.shashank.polance.CustomTextview
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Collaboration"
+        android:textSize="24sp"
+        android:id="@+id/notifications_text"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"/>
+
+
+</RelativeLayout>
